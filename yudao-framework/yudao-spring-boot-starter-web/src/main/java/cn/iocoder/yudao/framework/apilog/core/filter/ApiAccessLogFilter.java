@@ -77,6 +77,8 @@ public class ApiAccessLogFilter extends ApiRequestFilter {
 
     private void buildApiAccessLogDTO(ApiAccessLog accessLog, HttpServletRequest request, LocalDateTime beginTime,
                                       Map<String, String> queryString, String requestBody, Exception ex) {
+        log.error("==============>>>>>>>>>>>>>>>>>>>>> URI :{}, query:{}, body:{}",
+                request.getRequestURI(), queryString, requestBody);
         // 处理用户信息
         accessLog.setUserId(WebFrameworkUtils.getLoginUserId(request));
         accessLog.setUserType(WebFrameworkUtils.getLoginUserType(request));

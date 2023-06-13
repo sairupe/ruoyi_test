@@ -2,6 +2,7 @@ package cn.iocoder.yudao.server;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
 
 /**
  * 项目的启动类
@@ -21,7 +22,7 @@ public class YudaoServerApplication {
         // 如果你碰到启动的问题，请认真阅读 https://doc.iocoder.cn/quick-start/ 文章
         // 如果你碰到启动的问题，请认真阅读 https://doc.iocoder.cn/quick-start/ 文章
 
-        SpringApplication.run(YudaoServerApplication.class, args);
+        ConfigurableApplicationContext applicationContext = SpringApplication.run(YudaoServerApplication.class, args);
 //        new SpringApplicationBuilder(YudaoServerApplication.class)
 //                .applicationStartup(new BufferingApplicationStartup(20480))
 //                .run(args);
@@ -29,6 +30,7 @@ public class YudaoServerApplication {
         // 如果你碰到启动的问题，请认真阅读 https://doc.iocoder.cn/quick-start/ 文章
         // 如果你碰到启动的问题，请认真阅读 https://doc.iocoder.cn/quick-start/ 文章
         // 如果你碰到启动的问题，请认真阅读 https://doc.iocoder.cn/quick-start/ 文章
+        System.out.println();
     }
 
 }
