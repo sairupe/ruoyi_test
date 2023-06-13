@@ -21,7 +21,7 @@ import java.io.IOException;
 public class XssFilter extends OncePerRequestFilter {
 
     /**
-     * 属性
+     * 属性l
      */
     private final XssProperties properties;
     /**
@@ -46,7 +46,8 @@ public class XssFilter extends OncePerRequestFilter {
 
         // 如果匹配到无需过滤，则不过滤
         String uri = request.getRequestURI();
-        return properties.getExcludeUrls().stream().anyMatch(excludeUrl -> pathMatcher.match(excludeUrl, uri));
+        boolean result = properties.getExcludeUrls().stream().anyMatch(excludeUrl -> pathMatcher.match(excludeUrl, uri));
+        return result;
     }
 
 }

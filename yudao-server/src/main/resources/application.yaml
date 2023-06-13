@@ -145,6 +145,8 @@ yudao:
       - /admin-api/pay/notify/callback/* # 支付回调通知，不携带租户编号
       - /jmreport/* # 积木报表，无法携带租户编号
       - /admin-api/mp/open/** # 微信公众号开放平台，微信回调接口，无法携带租户编号
+      - /admin/** # TEST
+      - /test/** # TEST
     ignore-tables:
       - system_tenant
       - system_tenant_package
@@ -198,6 +200,8 @@ yudao:
     order:
       app-id: 1 # 商户编号
       expire-time: 2h # 支付的过期时间
+  xss:
+    enable: true
 
 debug: false
 
