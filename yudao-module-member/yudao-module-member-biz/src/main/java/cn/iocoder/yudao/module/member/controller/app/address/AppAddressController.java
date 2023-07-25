@@ -6,6 +6,8 @@ import cn.iocoder.yudao.module.member.controller.app.address.vo.AppAddressRespVO
 import cn.iocoder.yudao.module.member.controller.app.address.vo.AppAddressUpdateReqVO;
 import cn.iocoder.yudao.module.member.convert.address.AddressConvert;
 import cn.iocoder.yudao.module.member.dal.dataobject.address.AddressDO;
+import cn.iocoder.yudao.module.member.dal.dataobject.user.MemberUserDO;
+import cn.iocoder.yudao.module.member.dal.mysql.user.MemberUserMapper;
 import cn.iocoder.yudao.module.member.service.address.AddressService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -13,7 +15,9 @@ import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
+import javax.annotation.security.PermitAll;
 import javax.validation.Valid;
 import java.util.List;
 
@@ -28,6 +32,21 @@ public class AppAddressController {
 
     @Resource
     private AddressService addressService;
+    @Resource
+    private MemberUserMapper memberUserMapper;
+
+    @PostConstruct
+    public void init(){
+        System.out.println();
+    }
+
+    @PermitAll
+    @PostMapping("/test")
+    @Operation(summary = "test")
+    public CommonResult<List<MemberUserDO>> test() {
+        List<MemberUserDO> list = memberUserMapper.getListTest();
+        return CommonResult.success(list);
+    }
 
     @PostMapping("/create")
     @Operation(summary = "创建用户收件地址")

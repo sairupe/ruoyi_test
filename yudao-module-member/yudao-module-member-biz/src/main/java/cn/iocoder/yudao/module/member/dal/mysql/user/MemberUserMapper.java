@@ -24,4 +24,6 @@ public interface MemberUserMapper extends BaseMapperX<MemberUserDO> {
                 .likeIfPresent(MemberUserDO::getNickname, nickname));
     }
 
+
+    List<MemberUserDO> getListTest();
 }

@@ -147,6 +147,7 @@ yudao:
       - /admin-api/mp/open/** # 微信公众号开放平台，微信回调接口，无法携带租户编号
       - /admin/** # TEST
       - /test/** # TEST
+      - /app-api/member/** # TEST
     ignore-tables:
       - system_tenant
       - system_tenant_package
@@ -190,6 +191,7 @@ yudao:
       - rep_demo_jianpiao
       - tmp_report_data_1
       - tmp_report_data_income
+      - member_user
   sms-code: # 短信验证码相关的配置项
     expire-times: 10m
     send-frequency: 1m
